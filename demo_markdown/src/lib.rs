@@ -47,6 +47,7 @@ pub fn include_md(_token_stream: proc_macro::TokenStream) -> proc_macro::TokenSt
         "DividerMdPage" => "../../thaw/src/divider/docs/mod.md",
         "DrawerMdPage" => "../../thaw/src/drawer/docs/mod.md",
         "FieldMdPage" => "../../thaw/src/field/docs/mod.md",
+        "FormMdPage" => "../../thaw/src/form/docs/mod.md",
         "FlexMdPage" => "../../thaw/src/flex/docs/mod.md",
         "GridMdPage" => "../../thaw/src/grid/docs/mod.md",
         "IconMdPage" => "../../thaw/src/icon/docs/mod.md",

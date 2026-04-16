@@ -286,6 +286,11 @@ pub(crate) fn gen_nav_data() -> Vec<NavGroupOption> {
                 },
                 NavItemOption {
                     group: None,
+                    value: "/components/form",
+                    label: "Form",
+                },
+                NavItemOption {
+                    group: None,
                     value: "/components/flex",
                     label: "Flex",
                 },

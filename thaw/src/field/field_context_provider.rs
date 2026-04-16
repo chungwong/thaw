@@ -12,7 +12,7 @@ pub struct FieldContextInjection(
 );
 
 impl FieldContextInjection {
-    fn new() -> Self {
+    pub(crate) fn new() -> Self {
         Self(StoredValue::new(SlotMap::new()))
     }
 
