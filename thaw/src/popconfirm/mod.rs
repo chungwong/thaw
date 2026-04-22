@@ -2,7 +2,7 @@ use crate::{
     Button, ButtonAppearance, ButtonSize, Popover, PopoverAppearance, PopoverPosition, PopoverSize,
     PopoverTrigger, PopoverTriggerType,
 };
-use leptos::prelude::*;
+use leptos::{ev, prelude::*};
 use thaw_utils::{mount_style, BoxCallback, Model};
 
 /// A popover that asks for confirmation before executing an action.
@@ -70,6 +70,17 @@ pub fn Popconfirm<T: AddAnyAttr + IntoView + Send + 'static>(
 
     let on_open = on_open.unwrap_or_else(|| BoxCallback::new(|| {}));
     let on_close = on_close.unwrap_or_else(|| BoxCallback::new(|| {}));
+
+    let on_cancel_clone = on_cancel.clone();
+    let handle = window_event_listener(ev::keydown, move |ev| {
+        if ev.key() == "Escape" && is_open.get_untracked() {
+            is_open.set(false);
+            if let Some(cb) = &on_cancel_clone {
+                cb.run(());
+            }
+        }
+    });
+    on_cleanup(move || handle.remove());
 
     view! {
         <Popover
