@@ -1,7 +1,7 @@
 use crate::ConfigInjection;
 use leptos::{context::Provider, ev, prelude::*};
-use thaw_components::{FocusTrap, Teleport};
 use leptos_transition_group::CSSTransition;
+use thaw_components::{FocusTrap, Teleport};
 use thaw_utils::{class_list, mount_style, use_lock_html_scroll, Model};
 
 #[component]

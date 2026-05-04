@@ -2,7 +2,7 @@ mod types;
 
 pub use types::*;
 
-use crate::{TreeItemInjection, _motion::CollapseTransition};
+use crate::{_motion::CollapseTransition, TreeItemInjection};
 use leptos::{context::Provider, either::Either, prelude::*};
 use std::collections::HashSet;
 use thaw_utils::{class_list, mount_style, Model};

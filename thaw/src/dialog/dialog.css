@@ -35,16 +35,18 @@
     inset: 0px;
     padding: 24px;
     margin: auto;
-    overflow: unset;
+    overflow: hidden;
     border: 1px solid var(--colorTransparentStroke);
     border-radius: var(--borderRadiusXLarge);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     user-select: unset;
     visibility: unset;
     position: fixed;
     height: fit-content;
     max-width: 600px;
-    max-height: 100vh;
+    max-height: calc(100vh - 48px);
     box-sizing: border-box;
     background-color: var(--colorNeutralBackground1);
     color: var(--colorNeutralForeground1);
@@ -73,18 +75,14 @@
 }
 
 .thaw-dialog-body {
-    overflow: unset;
-    gap: 8px;
-    display: grid;
-    max-height: calc(-48px + 100vh);
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
     box-sizing: border-box;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr 1fr auto;
 }
 
 .thaw-dialog-title {
-    grid-area: 1 / 1 / 1 / 3;
-    grid-column-end: 4;
+    flex-shrink: 0;
     font-family: var(--fontFamilyBase);
     font-size: var(--fontSizeBase500);
     font-weight: var(--fontWeightSemibold);
@@ -93,6 +91,7 @@
 }
 
 .thaw-dialog-content {
+    flex: 1;
     padding: var(--strokeWidthThick);
     margin: calc(var(--strokeWidthThick) * -1);
     font-family: var(--fontFamilyBase);
@@ -100,18 +99,14 @@
     font-weight: var(--fontWeightRegular);
     line-height: var(--lineHeightBase300);
     overflow-y: auto;
-    min-height: 32px;
+    min-height: 0;
     box-sizing: border-box;
-    grid-area: 2 / 1 / 2 / 4;
 }
 
 .thaw-dialog-actions {
-    grid-column-start: 2;
-    justify-self: end;
-    grid-column-end: 4;
-    gap: 8px;
-    height: fit-content;
-    box-sizing: border-box;
+    flex-shrink: 0;
     display: flex;
-    grid-row: 3 / 3;
+    justify-content: flex-end;
+    gap: 8px;
+    box-sizing: border-box;
 }

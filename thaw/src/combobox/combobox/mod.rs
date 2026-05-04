@@ -6,7 +6,7 @@ pub use types::*;
 
 use super::listbox::{listbox_keyboard_event, Listbox};
 use crate::{
-    ChevronDownRegularIcon, DismissRegularIcon, FieldInjection, Rule, _aria::use_active_descendant,
+    _aria::use_active_descendant, ChevronDownRegularIcon, DismissRegularIcon, FieldInjection, Rule,
 };
 use leptos::{context::Provider, ev, html, prelude::*};
 use std::collections::HashMap;
